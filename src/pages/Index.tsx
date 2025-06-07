@@ -22,8 +22,8 @@ const Index = () => {
                 Explore our research excellence, cutting-edge laboratories, and startup ecosystem.
               </p>
               <div className="d-flex gap-3 flex-wrap">
-                <Link to="/research/highlights" className="btn btn-primary btn-lg">
-                  Research Highlights
+                <Link to="/research/publications" className="btn btn-primary btn-lg">
+                  View Publications
                 </Link>
                 <Link to="/research/centers" className="btn btn-outline-primary btn-lg">
                   Research Centers
@@ -41,8 +41,218 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quick Research Links */}
+      {/* Stats Section */}
+      <section className="bg-primary text-white py-5">
+        <div className="container">
+          <div className="row text-center">
+            <div className="col-6 col-md-3 mb-4 mb-md-0">
+              <h3 className="fw-bold mb-2">150+</h3>
+              <p className="mb-0">Research Projects</p>
+            </div>
+            <div className="col-6 col-md-3 mb-4 mb-md-0">
+              <h3 className="fw-bold mb-2">25+</h3>
+              <p className="mb-0">Research Centers</p>
+            </div>
+            <div className="col-6 col-md-3 mb-4 mb-md-0">
+              <h3 className="fw-bold mb-2">500+</h3>
+              <p className="mb-0">Publications</p>
+            </div>
+            <div className="col-6 col-md-3">
+              <h3 className="fw-bold mb-2">50+</h3>
+              <p className="mb-0">Patents Filed</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Publications and Patents Section */}
       <section className="py-5">
+        <div className="container">
+          <div className="row text-center mb-5">
+            <div className="col-12">
+              <h2 className="fw-bold text-primary mb-3">Publications & Patents</h2>
+              <p className="lead text-muted">Explore our latest research publications and patent portfolio</p>
+            </div>
+          </div>
+
+          {/* Tab Navigation */}
+          <div className="row mb-4">
+            <div className="col-12">
+              <ul className="nav nav-pills nav-fill mb-4" id="publicationsTab" role="tablist">
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link active" id="publications-tab" data-bs-toggle="pill" data-bs-target="#publications" type="button" role="tab">
+                    <i className="fas fa-book me-2"></i>
+                    Recent Publications
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button className="nav-link" id="patents-tab" data-bs-toggle="pill" data-bs-target="#patents" type="button" role="tab">
+                    <i className="fas fa-lightbulb me-2"></i>
+                    Patents & IP
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Tab Content */}
+          <div className="tab-content" id="publicationsTabContent">
+            {/* Publications Tab */}
+            <div className="tab-pane fade show active" id="publications" role="tabpanel">
+              <div className="row g-4">
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-primary">Journal Article</span>
+                        <small className="text-muted">2024</small>
+                      </div>
+                      <h6 className="card-title text-primary">Machine Learning Approaches for Climate Change Prediction</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Authors:</strong> Dr. A. Kumar, Dr. B. Singh, Dr. C. Patel
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Journal:</strong> Nature Climate Change
+                      </p>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <small className="text-success">Impact Factor: 15.3</small>
+                        <small className="text-info">Citations: 145</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-success">Research Article</span>
+                        <small className="text-muted">2024</small>
+                      </div>
+                      <h6 className="card-title text-primary">Quantum Computing Applications in Drug Discovery</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Authors:</strong> Dr. P. Sharma, Dr. R. Gupta
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Journal:</strong> Science
+                      </p>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <small className="text-success">Impact Factor: 47.7</small>
+                        <small className="text-info">Citations: 203</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-info">Review Article</span>
+                        <small className="text-muted">2023</small>
+                      </div>
+                      <h6 className="card-title text-primary">Sustainable Energy Storage Systems</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Authors:</strong> Dr. S. Mehta, Dr. N. Jain, Dr. V. Agarwal
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Journal:</strong> Energy & Environmental Science
+                      </p>
+                      <div className="d-flex justify-content-between align-items-center">
+                        <small className="text-success">Impact Factor: 32.4</small>
+                        <small className="text-info">Citations: 298</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center mt-4">
+                <Link to="/research/publications" className="btn btn-primary">
+                  View All Publications
+                </Link>
+              </div>
+            </div>
+
+            {/* Patents Tab */}
+            <div className="tab-pane fade" id="patents" role="tabpanel">
+              <div className="row g-4">
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-success">Granted</span>
+                        <small className="text-muted">2024</small>
+                      </div>
+                      <h6 className="card-title text-primary">Smart Irrigation System Using IoT</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Inventors:</strong> Dr. A. Patel, Dr. B. Kumar, Ms. S. Sharma
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Patent No:</strong> IN202411001234
+                      </p>
+                      <p className="card-text small text-muted">
+                        <strong>Filing Date:</strong> March 15, 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-warning">Under Review</span>
+                        <small className="text-muted">2024</small>
+                      </div>
+                      <h6 className="card-title text-primary">Novel Battery Technology for EVs</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Inventors:</strong> Dr. R. Singh, Dr. M. Gupta
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Patent No:</strong> IN202411005678
+                      </p>
+                      <p className="card-text small text-muted">
+                        <strong>Filing Date:</strong> January 20, 2024
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-6 col-lg-4">
+                  <div className="card h-100 card-hover border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex justify-content-between align-items-start mb-3">
+                        <span className="badge bg-success">Granted</span>
+                        <small className="text-muted">2023</small>
+                      </div>
+                      <h6 className="card-title text-primary">AI-Based Medical Image Analysis</h6>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Inventors:</strong> Dr. P. Sharma, Dr. N. Verma, Dr. K. Jain
+                      </p>
+                      <p className="card-text small text-muted mb-2">
+                        <strong>Patent No:</strong> IN202311009876
+                      </p>
+                      <p className="card-text small text-muted">
+                        <strong>Filing Date:</strong> November 10, 2023
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center mt-4">
+                <Link to="/research/publications" className="btn btn-primary">
+                  View All Patents
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Research Links */}
+      <section className="py-5 bg-light">
         <div className="container">
           <div className="row text-center mb-5">
             <div className="col-12">
@@ -52,24 +262,6 @@ const Index = () => {
           </div>
           
           <div className="row g-4">
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 card-hover border-0 shadow-sm">
-                <div className="card-body text-center p-4">
-                  <div className="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                       style={{width: '80px', height: '80px'}}>
-                    <i className="fas fa-trophy text-primary fs-3"></i>
-                  </div>
-                  <h5 className="card-title text-primary mb-3">Research Highlights</h5>
-                  <p className="card-text text-muted mb-4">
-                    Discover our major research achievements, awards, and breakthrough discoveries.
-                  </p>
-                  <Link to="/research/highlights" className="btn btn-outline-primary">
-                    Explore Achievements
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             <div className="col-md-6 col-lg-4">
               <div className="card h-100 card-hover border-0 shadow-sm">
                 <div className="card-body text-center p-4">
@@ -83,24 +275,6 @@ const Index = () => {
                   </p>
                   <Link to="/research/centers" className="btn btn-outline-success">
                     Visit Centers
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-md-6 col-lg-4">
-              <div className="card h-100 card-hover border-0 shadow-sm">
-                <div className="card-body text-center p-4">
-                  <div className="bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" 
-                       style={{width: '80px', height: '80px'}}>
-                    <i className="fas fa-book text-info fs-3"></i>
-                  </div>
-                  <h5 className="card-title text-info mb-3">Publications & Patents</h5>
-                  <p className="card-text text-muted mb-4">
-                    Access our extensive collection of research publications and patents.
-                  </p>
-                  <Link to="/research/publications" className="btn btn-outline-info">
-                    View Publications
                   </Link>
                 </div>
               </div>
@@ -158,30 +332,6 @@ const Index = () => {
                   </Link>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="bg-primary text-white py-5">
-        <div className="container">
-          <div className="row text-center">
-            <div className="col-6 col-md-3 mb-4 mb-md-0">
-              <h3 className="fw-bold mb-2">150+</h3>
-              <p className="mb-0">Research Projects</p>
-            </div>
-            <div className="col-6 col-md-3 mb-4 mb-md-0">
-              <h3 className="fw-bold mb-2">25+</h3>
-              <p className="mb-0">Research Centers</p>
-            </div>
-            <div className="col-6 col-md-3 mb-4 mb-md-0">
-              <h3 className="fw-bold mb-2">500+</h3>
-              <p className="mb-0">Publications</p>
-            </div>
-            <div className="col-6 col-md-3">
-              <h3 className="fw-bold mb-2">50+</h3>
-              <p className="mb-0">Patents Filed</p>
             </div>
           </div>
         </div>
