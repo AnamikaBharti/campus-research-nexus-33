@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -226,7 +225,7 @@ const Header = () => {
       </div>
 
       {/* Primary Navbar */}
-      <div className="bg-white shadow-lg">
+      <div className="bg-white shadow-lg relative">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
@@ -243,8 +242,8 @@ const Header = () => {
                     <Users className="h-4 w-4 mr-1" />
                     About Us
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {aboutUsItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
@@ -264,7 +263,7 @@ const Header = () => {
                       <GraduationCap className="h-4 w-4 mr-1" />
                       Academics
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-[300px] bg-white">
+                    <DropdownMenuContent className="w-[300px] bg-white border shadow-lg">
                       {academicsItems.map(item => (
                         <DropdownMenuItem key={item.title}>
                           <a href={item.href} className="w-full">{item.title}</a>
@@ -275,13 +274,13 @@ const Header = () => {
                         <DropdownMenuSubTrigger>
                           <span>Schools & Departments</span>
                         </DropdownMenuSubTrigger>
-                        <DropdownMenuSubContent className="w-[300px] bg-white">
+                        <DropdownMenuSubContent className="w-[300px] bg-white border shadow-lg">
                           {Object.entries(schoolsAndDepartments).map(([school, departments]) => (
                             <DropdownMenuSub key={school}>
                               <DropdownMenuSubTrigger>
                                 <span className="text-sm">{school}</span>
                               </DropdownMenuSubTrigger>
-                              <DropdownMenuSubContent className="w-[250px] bg-white">
+                              <DropdownMenuSubContent className="w-[250px] bg-white border shadow-lg">
                                 {departments.map(dept => (
                                   <DropdownMenuItem key={dept}>
                                     <a href="#" className="w-full text-sm">{dept}</a>
@@ -301,8 +300,8 @@ const Header = () => {
                     <FileSignature className="h-4 w-4 mr-1" />
                     Admissions
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {admissionsItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
@@ -321,8 +320,8 @@ const Header = () => {
                     <Microscope className="h-4 w-4 mr-1" />
                     Research
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {researchItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
@@ -341,8 +340,8 @@ const Header = () => {
                     <University className="h-4 w-4 mr-1" />
                     Campus Life
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {campusLifeItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
@@ -361,9 +360,30 @@ const Header = () => {
                     <Camera className="h-4 w-4 mr-1" />
                     Announcements
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
-                      {announcementsItems.map(item => (
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link className={cn("block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")} to="/news-notifications">
+                            <div className="text-sm font-medium leading-none">News & Notifications</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link className={cn("block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")} to="/events-calendar">
+                            <div className="text-sm font-medium leading-none">Events Calendar</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      <li>
+                        <NavigationMenuLink asChild>
+                          <Link className={cn("block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")} to="/photo-gallery">
+                            <div className="text-sm font-medium leading-none">Photo Gallery</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                      {announcementsItems.slice(3).map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
                             <a className={cn("block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground")} href={item.href}>
@@ -381,8 +401,8 @@ const Header = () => {
                     <Briefcase className="h-4 w-4 mr-1" />
                     Placements
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {placementsItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
@@ -401,8 +421,8 @@ const Header = () => {
                     <Users className="h-4 w-4 mr-1" />
                     Alumni
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[300px] gap-2 p-4 bg-white">
+                  <NavigationMenuContent className="absolute top-full left-0 mt-0">
+                    <ul className="grid w-[300px] gap-2 p-4 bg-white border shadow-lg rounded-md">
                       {alumniItems.map(item => (
                         <li key={item.title}>
                           <NavigationMenuLink asChild>
