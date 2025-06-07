@@ -105,12 +105,9 @@ const Header = () => {
     title: "StartUP",
     href: "/research/startup"
   }, {
-    title: "Funded Projects",
+    title: "Funded Projects & IPR Cell",
     href: "/research/funded-projects"
-  }, {
-    title: "IPR Cell",
-    href: "#"
-  }];
+  } ];
   
   const campusLifeItems = [{
     title: "Virtual Tour",
