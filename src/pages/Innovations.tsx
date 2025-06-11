@@ -2,7 +2,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+const TeamCard = ({ name, position }) => {
+  return (
+    <div className="bg-white rounded-2xl shadow-lg p-4 text-center hover:scale-105 transition-transform duration-300">
+      <div className="w-24 h-24 mx-auto mb-4 bg-blue-200 rounded-full flex items-center justify-center text-3xl font-bold text-white">
+        {name.split(' ').map(n => n[0]).join('')}
+      </div>
+      <h3 className="text-xl font-semibold text-gray-800">{name}</h3>
+      <p className="text-gray-500">{position}</p>
+    </div>
+  );
+};
 const Innovations = () => {
   const innovations = [
     {
@@ -80,7 +90,15 @@ const Innovations = () => {
       funding: "₹3-12 Lakhs"
     }
   ];
-
+ 
+ const teamMembers = [
+    { name: 'Dr Shakti Sahi', position: 'Chief Technology Officer' },
+    { name: 'Dr Satish K Mittal', position: 'Chief Operations Officer' },
+    { name: 'Dr Vinay Kumar Litoria', position: 'Nodal Officer' },
+    { name: 'Mr. Raj Kumar', position: 'Manager' },
+    { name: 'Mr. Manish Bhardwaj', position: 'Office Assistant' },
+    { name: 'Mr. Shekhar Chandra', position: 'Office Attendant' },
+  ];
   return (
     <>
       <Navbar />
@@ -238,9 +256,17 @@ const Innovations = () => {
             </div>
           ))}
         </div>
+<div className="py-12 px-4 bg-gray-100 min-h-screen">
+      <h2 className="text-4xl font-bold text-center mb-10  text-primary">GBU Incubation Centre Team</h2>
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        {teamMembers.map((member, index) => (
+          <TeamCard key={index} name={member.name} position={member.position} />
+        ))}
+      </div>
+    </div>
 
         {/* Innovation Process */}
-        <div className="row mb-5">
+        <div className="row mb-5 mt-10">
           <div className="col-12 text-center mb-4">
             <h3 className="text-primary">Innovation Journey</h3>
             <p className="text-muted">From idea to market-ready solution</p>
@@ -304,7 +330,7 @@ const Innovations = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Call to Action */}
         <div className="row">
           <div className="col-12">
@@ -316,7 +342,8 @@ const Innovations = () => {
               </p>
               <div className="d-flex gap-3 justify-content-center flex-wrap">
                 <button className="btn btn-light btn-lg">Submit Innovation Proposal</button>
-                <button className="btn btn-outline-light btn-lg">Schedule Consultation</button>
+                <button className="btn btn-light btn-lg">Apply for Incubation</button>
+              
               </div>
             </div>
           </div>

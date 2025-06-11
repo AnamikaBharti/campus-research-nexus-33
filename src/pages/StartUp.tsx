@@ -359,7 +359,7 @@ const StartUp = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="row">
+        {/* <div className="row">
           <div className="col-12">
             <div className="bg-gradient text-white rounded p-5 text-center" 
                  style={{background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)'}}>
@@ -373,7 +373,7 @@ const StartUp = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Footer />
