@@ -10,11 +10,18 @@ const Index = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="research-hero" style={{ marginTop: '76px' }}>
-        <div className="container w-full">
+      <section className="research-hero " >
+        <div className="container w-full text-primary ">
+          <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold text-center  mb-4'>
+            Research & Innovation
+          </h1>
+          <h2 className='text-blue-500 font-semibold italic text-center mb-2'> "Empowering Innovations | Creating Impact"
+          </h2>
+          <p className="text-gray-600 leading-6 text-1xl text-center m-1">Driving groundbreaking research and fostering innovation across multiple disciplines. Explore our research excellence, cutting-edge laboratories, and startup ecosystem.
 
+          </p>
           <div className="flex flex-row sm:flex-wrap lg:flex-nowrap justify-center items-center gap-3 px-4 py-8">
-          
+
             <div className="bg-white p-4 rounded-lg shadow-lg w-full sm:w-[300px] md:w-[320px] lg:w-[350px] h-[400px]">
               <img
                 src="/assets/card1.png"
@@ -27,9 +34,9 @@ const Index = () => {
               </p>
             </div>
 
-        
+
             <div className="bg-white p-4 rounded-lg shadow-lg w-full sm:w-[300px] md:w-[320px] lg:w-[350px] h-[400px]">
-              <img src="/assets/card2.png" alt="card2"  className="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <img src="/assets/card2.png" alt="card2" className="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out hover:scale-110" />
               <h3 className="text-1xl font-bold text-gray-800 mb-2">Research Excellence Initiatives</h3>
               <p className="text-gray-600 text-sm">
                 The University offers funding assistance in India and abroad, along with support for finding research collaborators. Various seed funding schemes are also available for faculty and students.
@@ -37,7 +44,7 @@ const Index = () => {
             </div>
 
             <div className="bg-white p-4 rounded-lg shadow-lg w-full sm:w-[300px] md:w-[320px] lg:w-[350px] h-[400px]">
-              <img src="/assets/card3.png" alt="card3"  className="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out hover:scale-110" />
+              <img src="/assets/card3.png" alt="card3" className="w-full h-48 object-cover rounded-md mb-4 transition-transform duration-300 ease-in-out hover:scale-110" />
               <h3 className="text-1xl font-bold text-gray-800 mb-2">Research Resources & Compliance</h3>
               <p className="text-gray-600 text-sm">
                 The University ensures research integrity and ethics through established structures and processes that align with the highest standards across all academic programs.
