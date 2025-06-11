@@ -181,7 +181,7 @@ const Innovations = () => {
         {/* Innovation Categories */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Innovation Focus Areas</h3>
+            <h3 className="text-primary text-2xl">Innovation Focus Areas</h3>
           </div>
           
           <div className="col-md-3 text-center mb-4">
@@ -220,7 +220,7 @@ const Innovations = () => {
         {/* Incubation Programs */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Incubation Programs</h3>
+            <h3 className="text-primary text-2xl">Incubation Programs</h3>
             <p className="text-muted">Comprehensive support for turning ideas into successful ventures</p>
           </div>
           
@@ -257,7 +257,7 @@ const Innovations = () => {
           ))}
         </div>
 <div className="py-12 px-4 bg-gray-100 min-h-screen">
-      <h2 className="text-4xl font-bold text-center mb-10  text-primary">GBU Incubation Centre Team</h2>
+      <h2 className="text-2xl text-center mb-10  text-primary">GBU Incubation Centre Team</h2>
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {teamMembers.map((member, index) => (
           <TeamCard key={index} name={member.name} position={member.position} />
@@ -268,7 +268,7 @@ const Innovations = () => {
         {/* Innovation Process */}
         <div className="row mb-5 mt-10">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Innovation Journey</h3>
+            <h3 className="text-primary text-2xl">Innovation Journey</h3>
             <p className="text-muted">From idea to market-ready solution</p>
           </div>
           

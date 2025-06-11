@@ -3,13 +3,13 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import Index from "./pages/Index.jsx";
  
 import ResearchCenters from "./pages/ResearchCenters";
 import Publications from "./pages/Publications";
 import Innovations from "./pages/Innovations";
 import StartUp from "./pages/StartUp";
-import FundedProjects from "./pages/FundedProjects";
+import FundedProjects from "./pages/FundedProjects.jsx";
 import NotFound from "./pages/NotFound";
  
 

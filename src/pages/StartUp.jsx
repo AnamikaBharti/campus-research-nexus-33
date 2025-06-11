@@ -170,7 +170,7 @@ const StartUp = () => {
         {/* Featured Startups */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Our Startup Portfolio</h3>
+            <h3 className="text-primary text-2xl">Our Startup Portfolio</h3>
             <p className="text-muted">Meet the innovative companies that started their journey with us</p>
           </div>
           
@@ -237,7 +237,7 @@ const StartUp = () => {
         {/* Support Services */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Startup Support Services</h3>
+            <h3 className="text-primary text-2xl">Startup Support Services</h3>
             <p className="text-muted">Comprehensive ecosystem to help your startup succeed</p>
           </div>
           
@@ -263,7 +263,7 @@ const StartUp = () => {
             <div className="bg-light rounded p-5">
               <div className="row align-items-center">
                 <div className="col-lg-6">
-                  <h3 className="text-primary mb-3">Success Story Spotlight</h3>
+                  <h3 className="text-primary text-2xl mb-3">Success Story Spotlight</h3>
                   <h4 className="mb-3">AgroSense Technologies</h4>
                   <p className="text-muted mb-4">
                     "Starting from a university research project, AgroSense has grown into a leading AgriTech company 
@@ -313,7 +313,7 @@ const StartUp = () => {
         {/* Application Process */}
         <div className="row mb-5">
           <div className="col-12 text-center mb-4">
-            <h3 className="text-primary">Join Our Startup Ecosystem</h3>
+            <h3 className="text-primary text-2xl">Join Our Startup Ecosystem</h3>
             <p className="text-muted">Simple process to get started</p>
           </div>
           
