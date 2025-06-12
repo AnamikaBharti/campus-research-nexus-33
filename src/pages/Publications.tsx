@@ -177,19 +177,34 @@ const Publications = () => {
     <>
       <Navbar />
       
-      <div className="container" style={{ marginTop: '100px', marginBottom: '50px' }}>
+      <div className=" min-h-screen bg-background" style={{ marginTop: '', marginBottom: '50px' }}>
         {/* Page Header */}
-        <div className="row mb-5">
+        {/* <div className="row mb-5">
           <div className="col-12 text-center">
             <h1 className="display-4 fw-bold text-primary mb-3">Publications & Patents</h1>
             <p className="lead text-muted">
               Explore our extensive research output and intellectual property portfolio
             </p>
           </div>
+        </div> */}
+        <section className="relative h-96 bg-gradient-to-r from-emerald-900 via-teal-800 to-blue-800">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: 'url("https://c8.alamy.com/comp/2BPF3KC/hexagon-grid-with-icon-and-keywords-about-project-management-and-life-cycle-corporate-office-on-background-2BPF3KC.jpg")'
+          }}
+        ></div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">Publications & Patents</h1>
+            <p className="text-xl opacity-90">Explore our extensive research output and intellectual property portfolio</p>
+          </div>
         </div>
-
+      </section>
+<div className="container">
         {/* Statistics Cards */}
-        <div className="row mb-5">
+        <div className="row mb-5 mt-10">
           <div className="col-md-3 mb-4">
             <div className="card border-0 shadow-sm bg-primary text-white text-center">
               <div className="card-body">
@@ -472,7 +487,7 @@ const Publications = () => {
             </div>
           </div>
         )}
-
+</div>
         {/* Call to Action */}
         <div className="row mt-5 pt-5 border-top">
           <div className="col-12">

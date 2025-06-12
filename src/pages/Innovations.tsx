@@ -103,19 +103,45 @@ const Innovations = () => {
     <>
       <Navbar />
       
-      <div className="container" style={{ marginTop: '100px', marginBottom: '50px' }}>
+      <div  className="min-h-screen bg-background" style={{ marginTop: '', marginBottom: '50px' }}>
         {/* Page Header */}
-        <div className="row mb-5">
+        {/* <div className="row mb-5">
           <div className="col-12 text-center">
             <h1 className="display-4 fw-bold text-primary mb-3">Innovations & Incubation</h1>
             <p className="lead text-muted">
               Transforming research into real-world solutions through innovation and entrepreneurship
             </p>
           </div>
+        </div> */}
+            <section className="relative h-96 bg-gradient-to-r from-emerald-900 via-teal-800 to-blue-800">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: 'url("https://c8.alamy.com/comp/2BPF3KC/hexagon-grid-with-icon-and-keywords-about-project-management-and-life-cycle-corporate-office-on-background-2BPF3KC.jpg")'
+          }}
+        ></div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">Innovations & Incubation</h1>
+            <p className="text-xl opacity-90">Transforming research into real-world solutions through innovation and entrepreneurship</p>
+            <a 
+  href="https://www.gburif.org/" 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  className=" mt-10 btn btn-outline-primary bg-green-200 btn-lg"
+>
+  Visit our Incubation Centres
+</a>
+
+          </div>
         </div>
+      </section>
+
 
         {/* Featured Innovation Carousel */}
-        <div className="row mb-5">
+        <div className="container">
+        <div className="row mb-5 mt-10">
           <div className="col-12">
             <div id="innovationCarousel" className="carousel slide" data-bs-ride="carousel">
               <div className="carousel-indicators">
@@ -330,7 +356,7 @@ const Innovations = () => {
             </div>
           </div>
         </div>
- 
+ </div>
         {/* Call to Action */}
         <div className="row">
           <div className="col-12">

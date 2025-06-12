@@ -10,7 +10,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="research-hero" style={{ marginTop: '76px' }}>
+      {/* <section className="research-hero" style={{ marginTop: '' }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-8">
@@ -39,7 +39,55 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+<section className="research-hero position-relative" style={{ marginTop: '' }}>
+  {/* Background Image */}
+  <div
+    className="background-image"
+    style={{
+      backgroundImage: 'url(https://www.elmhurst.edu/wp-content/uploads/2018/12/5-skills-project-management-degree-elmhurst-college-infographic-thumb.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      opacity: 0.2,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 1
+    }}
+  ></div>
+
+  {/* Foreground Content */}
+  <div className="container position-relative" style={{ zIndex: 2 }}>
+    <div className="row align-items-center">
+      <div className="col-lg-8">
+        <h1 className="display-4 fw-bold text-primary mb-4">
+          Research & Innovation at GBU
+        </h1>
+        <p className="lead text-muted mb-4">
+          Driving groundbreaking research and fostering innovation across multiple disciplines. 
+          Explore our research excellence, cutting-edge laboratories, and startup ecosystem.
+        </p>
+        <div className="d-flex gap-3 flex-wrap">
+          <Link to="/research/publications" className="btn btn-primary btn-lg">
+            View Publications
+          </Link>
+          <Link to="/research/centers" className="btn btn-outline-primary btn-lg">
+            Research Centers
+          </Link>
+        </div>
+      </div>
+      <div className="col-lg-4">
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop" 
+          alt="Research at GBU" 
+          className="img-fluid rounded shadow"
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Stats Section */}
   

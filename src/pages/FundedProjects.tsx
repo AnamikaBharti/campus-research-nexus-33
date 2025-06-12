@@ -94,7 +94,7 @@ const FundedProjects = () => {
     patents: 28
   };
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case 'Ongoing': return 'bg-blue-500';
       case 'Recently Started': return 'bg-green-500';
@@ -107,7 +107,7 @@ const FundedProjects = () => {
     <> <Navbar />
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="container" style={{ marginTop: '100px', marginBottom: '50px' }}>
+      {/* <div className="container" style={{ marginTop: '100px', marginBottom: '50px' }}>
   <div className="row mb-5">
           <div className="col-12 text-center">
             <h1 className="display-4 fw-bold text-primary mb-3">Funded Projects & IPR Cell</h1>
@@ -115,7 +115,23 @@ const FundedProjects = () => {
               Driving Innovation through Sponsored Research and Intellectual Property Protection
             </p>
           </div>
+        </div> */}
+
+         <section className="relative h-96 bg-gradient-to-r from-emerald-900 via-teal-800 to-blue-800">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage: 'url("https://c8.alamy.com/comp/2BPF3KC/hexagon-grid-with-icon-and-keywords-about-project-management-and-life-cycle-corporate-office-on-background-2BPF3KC.jpg")'
+          }}
+        ></div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-4">Funded Projects & IPR Cell</h1>
+            <p className="text-xl opacity-90">Driving Innovation through Sponsored Research and Intellectual Property Protection</p>
+          </div>
         </div>
+      </section>
 
       {/* Statistics Section */}
       <div className="container mx-auto px-4 py-12">
@@ -596,7 +612,7 @@ const FundedProjects = () => {
         </Card>
       </div>
     </div> 
-    </div>
+  
     <Footer/>
 </>  );
 };
