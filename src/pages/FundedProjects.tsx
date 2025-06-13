@@ -16,6 +16,18 @@ const FundedProjects = () => {
   const [activeAccordion, setActiveAccordion] = useState('projects');
   const [selectedProject, setSelectedProject] = useState(null);
   
+  const [selectedSchool, setSelectedSchool] = useState('all');
+
+  const schools  = [
+    'Biotechnology',
+    'Buddhist Studies & Civilization',
+    'Engineering',
+    'Humanities & Social Sciences',
+    'Information & Communication Technology',
+    'Law, Justice and Governance',
+    'Management',
+    'Vocational Studies & Applied Sciences'
+  ];
   const fundedProjects = [
     {
       id: 1,
@@ -27,6 +39,7 @@ const FundedProjects = () => {
       amount: "₹45.2 Lakhs",
       duration: "3 years (2022-2025)",
       status: "Ongoing",
+       school: "Engineering",
       category: "Climate Research",
       description: "Development of machine learning models to predict climate change impacts on crop yields and recommend adaptive farming strategies.",
       abstract: "This project aims to develop advanced AI algorithms that can accurately predict climate change impacts on agricultural systems. The research focuses on creating machine learning models that integrate weather data, soil conditions, and crop characteristics to provide actionable insights for farmers and policymakers."
@@ -41,6 +54,7 @@ const FundedProjects = () => {
       amount: "₹38.7 Lakhs",
       duration: "4 years (2023-2027)",
       status: "Ongoing",
+       school: "Biotechnology",
       category: "Biotechnology",
       description: "Leveraging quantum algorithms to accelerate the drug discovery process for treating rare genetic diseases.",
       abstract: "This groundbreaking research explores the potential of quantum computing in pharmaceutical research, specifically targeting the acceleration of drug discovery processes for rare genetic diseases that affect millions worldwide."
@@ -55,6 +69,7 @@ const FundedProjects = () => {
       amount: "₹52.1 Lakhs",
       duration: "3 years (2023-2026)",
       status: "Ongoing",
+      school: "Engineering",
       category: "Energy Systems",
       description: "Development of intelligent grid systems for optimal integration of solar and wind energy with traditional power infrastructure.",
       abstract: "This project focuses on creating smart grid technologies that can seamlessly integrate renewable energy sources with existing power infrastructure, ensuring optimal energy distribution and grid stability."
@@ -102,20 +117,13 @@ const FundedProjects = () => {
       default: return 'bg-gray-500';
     }
   };
-
+  const filteredProjects = selectedSchool === 'all'
+    ? fundedProjects
+    : fundedProjects.filter(project => project.school === selectedSchool);
   return (
     <> <Navbar />
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      {/* <div className="container" style={{ marginTop: '100px', marginBottom: '50px' }}>
-  <div className="row mb-5">
-          <div className="col-12 text-center">
-            <h1 className="display-4 fw-bold text-primary mb-3">Funded Projects & IPR Cell</h1>
-            <p className="lead text-muted">
-              Driving Innovation through Sponsored Research and Intellectual Property Protection
-            </p>
-          </div>
-        </div> */}
+    
 
          <section className="relative h-96 bg-gradient-to-r from-emerald-900 via-teal-800 to-blue-800">
         <div className="absolute inset-0 bg-black/50"></div>
@@ -177,7 +185,7 @@ const FundedProjects = () => {
         {/* Main Content */}
         <Accordion type="single" value={activeAccordion} onValueChange={setActiveAccordion} className="space-y-4">
           {/* Funded Projects Section */}
-          <AccordionItem value="projects" className="border rounded-lg shadow-sm">
+         <AccordionItem value="projects" className="border rounded-lg shadow-sm">
             <AccordionTrigger className="px-6 py-4 hover:no-underline">
               <div className="flex items-center gap-3">
                 <Building className="h-5 w-5 text-primary" />
@@ -185,8 +193,22 @@ const FundedProjects = () => {
               </div>
             </AccordionTrigger>
             <AccordionContent className="px-6 pb-6">
-              {/* Filters */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                {/* School-wise Filter */}
+                <Select onValueChange={(value) => setSelectedSchool(value)}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select School" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">All Schools</SelectItem>
+                    {schools.map((school, index) => (
+                      <SelectItem key={index} value={school}>
+                        {school}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
                 <Select>
                   <SelectTrigger>
                     <SelectValue placeholder="All Categories" />
@@ -198,6 +220,7 @@ const FundedProjects = () => {
                     <SelectItem value="energy">Energy Systems</SelectItem>
                   </SelectContent>
                 </Select>
+
                 <Select>
                   <SelectTrigger>
                     <SelectValue placeholder="All Status" />
@@ -208,23 +231,12 @@ const FundedProjects = () => {
                     <SelectItem value="completed">Completed</SelectItem>
                   </SelectContent>
                 </Select>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="All Agencies" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Agencies</SelectItem>
-                    <SelectItem value="dst">DST</SelectItem>
-                    <SelectItem value="icmr">ICMR</SelectItem>
-                    <SelectItem value="mnre">MNRE</SelectItem>
-                  </SelectContent>
-                </Select>
+
                 <Input placeholder="Search projects..." />
               </div>
 
-              {/* Projects Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {fundedProjects.map((project) => (
+                {filteredProjects.map((project) => (
                   <Card key={project.id} className="hover:shadow-lg transition-shadow">
                     <CardHeader>
                       <div className="flex items-start justify-between">
@@ -232,6 +244,7 @@ const FundedProjects = () => {
                           <CardTitle className="text-lg text-primary mb-2">{project.title}</CardTitle>
                           <CardDescription className="text-sm mb-3">{project.description}</CardDescription>
                           <Badge variant="secondary" className="mb-2">{project.category}</Badge>
+                          <Badge variant="outline" className="ml-2">{project.school}</Badge>
                         </div>
                         <img src={project.agencyLogo} alt="Agency logo" className="w-12 h-12 object-contain" />
                       </div>
@@ -278,18 +291,10 @@ const FundedProjects = () => {
                                 <p className="text-muted-foreground">{project.abstract}</p>
                               </div>
                               <div className="grid grid-cols-2 gap-4 text-sm">
-                                <div>
-                                  <strong>Funding Agency:</strong> {project.fundingAgency}
-                                </div>
-                                <div>
-                                  <strong>Amount:</strong> {project.amount}
-                                </div>
-                                <div>
-                                  <strong>Duration:</strong> {project.duration}
-                                </div>
-                                <div>
-                                  <strong>Status:</strong> {project.status}
-                                </div>
+                                <div><strong>Funding Agency:</strong> {project.fundingAgency}</div>
+                                <div><strong>Amount:</strong> {project.amount}</div>
+                                <div><strong>Duration:</strong> {project.duration}</div>
+                                <div><strong>Status:</strong> {project.status}</div>
                               </div>
                             </div>
                           </DialogContent>

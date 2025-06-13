@@ -2,8 +2,22 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import { useState } from 'react';
 const StartUp = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+  const [selectedSector, setSelectedSector] = useState('All');
+ const [selectedSchool, setSelectedSchool] = useState('All');
+   const schools = [
+    "All",
+    'Biotechnology',
+    'Buddhist Studies & Civilization',
+    'Engineering',
+    'Humanities & Social Sciences',
+    'Information & Communication Technology',
+    'Law, Justice and Governance',
+    'Management',
+    'Vocational Studies & Applied Sciences'
+  ];
   const startups = [
     {
       id: 1,
@@ -123,6 +137,14 @@ const StartUp = () => {
       icon: "fas fa-graduation-cap"
     }
   ];
+    const sectors = ['All', 'AgriTech', 'HealthTech', 'CleanTech', 'EdTech', 'CyberSecurity', 'Environmental'];
+
+  const filteredStartups = startups.filter(startup => {
+    const matchesSearch = startup.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSector = selectedSector === 'All' || startup.sector === selectedSector;
+    return matchesSearch && matchesSector;
+  });
+
 
   return (
     <>
@@ -188,7 +210,78 @@ const StartUp = () => {
             <h3 className="text-primary text-2xl">Our Startup Portfolio</h3>
             <p className="text-muted">Meet the innovative companies that started their journey with us</p>
           </div>
-          
+             <div className="min-h-screen bg-background py-5">
+        <div className="container">
+          <div className="row mb-4">
+           
+            <div className="col-md-4 mb-2">
+              <select
+                className="form-select"
+                value={selectedSector}
+                onChange={(e) => setSelectedSector(e.target.value)}
+              >
+                {sectors.map((sector, index) => (
+                  <option key={index} value={sector}>{sector}</option>
+                ))}
+              </select>
+            </div>
+            <div className="col-md-4 mb-2">
+              <select
+                className="form-select"
+                value={selectedSchool}
+                onChange={(e) => setSelectedSchool(e.target.value)}
+              >
+                {schools.map((school, index) => (
+                  <option key={index} value={school}>{school}</option>
+                ))}
+              </select>
+            </div>
+             <div className="col-md-4 mb-2">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search startups..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="row">
+            {filteredStartups.length > 0 ? (
+              filteredStartups.map(startup => (
+                <div key={startup.id} className="col-lg-6 mb-4">
+                  <div className="card h-100 border-0 shadow">
+                    <div className="card-body">
+                      <div className="row align-items-center mb-3">
+                        <div className="col-auto">
+                          <img src={startup.logo} alt={startup.name} className="rounded" style={{ width: '60px', height: '60px', objectFit: 'cover' }} />
+                        </div>
+                        <div className="col">
+                          <h5 className="card-title text-primary mb-1">{startup.name}</h5>
+                          <small className="text-muted">{startup.founders}</small>
+                        </div>
+                        <div className="col-auto">
+                          <span className="badge bg-primary">{startup.sector}</span>
+                        </div>
+                      </div>
+                      <p className="card-text text-muted mb-3">{startup.mission}</p>
+                      <div className="d-flex gap-2">
+                        <button className="btn btn-outline-primary btn-sm">Visit Website</button>
+                        <button className="btn btn-outline-secondary btn-sm">Learn More</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="col-12 text-center">
+                <p>No startups found.</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
           {startups.map((startup) => (
             <div key={startup.id} className="col-lg-6 mb-4">
               <div className="card h-100 card-hover border-0 shadow">

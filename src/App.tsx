@@ -11,7 +11,7 @@ import Innovations from "./pages/Innovations.tsx";
 import StartUp from "./pages/StartUp.tsx";
 import FundedProjects from "./pages/FundedProjects.tsx";
 import NotFound from "./pages/NotFound.tsx";
- 
+ import Archives from "./pages/Archives.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +29,7 @@ const App = () => (
           <Route path="/research/innovations" element={<Innovations />} />
           <Route path="/research/startup" element={<StartUp />} />
           <Route path="/research/funded-projects" element={<FundedProjects />} />
-      
+       <Route path="/publication/archives" element={<Archives/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
